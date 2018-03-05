@@ -7,7 +7,8 @@ url: /2017/09/11/setting-up-cicd-pipeline-for-golang-using-travis-ci-coveralls-g
 featured: ci.png
 featuredpath: date
 categories:
-  - Uncategorized
+  - go
+  - CI/CD
 tags:
   - coveralls
   - docker
@@ -57,7 +58,8 @@ go:
 
 We will use Coveralls and the [go plugin goveralls][9] for the code coverage. Coveralls will allow you to compute coverage and followup on their web interface:
 
-<img class="alignnone size-full wp-image-358" src="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-07-01-pm.png" alt="Screen Shot 09-11-17 at 07.01 PM" width="1859" height="1234" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-07-01-pm.png 1859w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-07-01-pm-300x199.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-07-01-pm-768x510.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-07-01-pm-1024x680.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/09/screen-shot-09-11-17-at-07-01-pm.png)
+
 
 Signup to [Coveralls.io][4] using your GitHub account and add your project&#8217;s GitHub repo.
 
@@ -74,7 +76,8 @@ script:
 
 Once the binaries are built, we need to release them. We will publish those to GitHub release page using goreleaser. This tool will publish our binaries to GitHub Release Page and create a nice looking changelog with the commit comments:
 
-<img class="alignnone size-full wp-image-280" src="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-09-17-at-10-54-pm.png" alt="Screen Shot 09-09-17 at 10.54 PM" width="1286" height="1178" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-09-17-at-10-54-pm.png 1286w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-09-17-at-10-54-pm-300x275.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-09-17-at-10-54-pm-768x704.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-09-17-at-10-54-pm-1024x938.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/09/screen-shot-09-09-17-at-10-54-pm.png)
+
 
 To implement goreleaser, add a .goreleaser.yml file to the root of your project:
 
@@ -117,7 +120,8 @@ We also want to deploy the application as a Docker image. Let&#8217;s use Travis
 
 Setup the docker hub credentials on Travis-CI web interface. Password should be secured:
 
-<img class="alignnone size-full wp-image-297" src="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-00-pm.png" alt="Screen Shot 09-11-17 at 01.00 PM" width="1582" height="154" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-00-pm.png 1582w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-00-pm-300x29.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-00-pm-768x75.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-00-pm-1024x100.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-00-pm.png)
+
 
 Then add the following lines to the travis file in your project:
 
@@ -150,11 +154,12 @@ Those lines instruct the following actions:
 
 Once you have everything in place, you can improve you project &#8220;look&#8221; by using badges. Those allow any visitor to have a quick overview on how the project is being developed/maintained.
 
-<img class="alignnone size-full wp-image-339" src="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-35-pm.png" alt="Screen Shot 09-11-17 at 01.35 PM" width="802" height="241" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-35-pm.png 802w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-35-pm-300x90.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-35-pm-768x231.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-35-pm.png)
 
 And then the same for Docker Hub 😉
 
-<img class="alignnone size-full wp-image-342" src="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-37-pm.png" alt="Screen Shot 09-11-17 at 01.37 PM" width="554" height="242" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-37-pm.png 554w, http://10.32.2.123:8080/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-37-pm-300x131.png 300w" sizes="(max-width: 554px) 100vw, 554px" />
+![](/wp-content/uploads/2017/09/screen-shot-09-11-17-at-01-37-pm.png)
+
 
 ## Conclusion
 
