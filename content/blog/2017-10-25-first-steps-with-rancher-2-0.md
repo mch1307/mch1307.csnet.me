@@ -7,7 +7,7 @@ url: /2017/10/25/first-steps-with-rancher-2-0/
 featured: rancher.png
 featuredpath: date
 categories:
-  - Uncategorized
+  - containers
 tags:
   - rancher
 
@@ -32,7 +32,7 @@ The installation (in non HA) could not be simpler:
 
 This simple command will take a few minutes to complete. Under the hood, Rancher will spin up a full Kubernetes cluster for us!
 
-<img class="alignnone size-full wp-image-434" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-12-56-pm.png" alt="Screen Shot 10-19-17 at 12.56 PM" width="1415" height="787" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-12-56-pm.png 1415w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-12-56-pm-300x167.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-12-56-pm-768x427.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-12-56-pm-1024x570.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-19-17-at-12-56-pm.png)
 
 For an HA setup, we will have to wait further guidance from Rancher Labs with later pre-release or as v2 becomes GA.
 
@@ -44,11 +44,11 @@ We will choose the &#8220;add hosts&#8221;. Rancher can add host from several so
 
 As with previous versions, Rancher will provide you with a docker command to be executed on the target host in order to join Rancher:
 
-<img class="alignnone size-full wp-image-450" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-44-pm.png" alt="Screen Shot 10-19-17 at 01.44 PM" width="1412" height="575" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-44-pm.png 1412w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-44-pm-300x122.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-44-pm-768x313.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-44-pm-1024x417.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-44-pm.png)
 
 Run that command on each node you want to add. After a few minutes, head to the Host part of the UI
 
-<img class="alignnone size-full wp-image-456" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-49-pm.png" alt="Screen Shot 10-19-17 at 01.49 PM" width="577" height="942" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-49-pm.png 577w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-49-pm-184x300.png 184w" sizes="(max-width: 577px) 100vw, 577px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-19-17-at-01-49-pm.png)
 
 That&#8217;s it, our cluster is now up and running!
 
@@ -62,25 +62,25 @@ Native Kubernetes:
 
 The native Kubernetes tools can easily be used with Rancher 2.0
 
-<img class="alignnone size-full wp-image-504" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-46-pm.png" alt="Screen Shot 10-22-17 at 08.46 PM" width="1744" height="640" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-46-pm.png 1744w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-46-pm-300x110.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-46-pm-768x282.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-46-pm-1024x376.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-46-pm.png)
 
 You can use the pure Kubernetes dashboard,
 
-<img class="alignnone size-full wp-image-510" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-48-pm.png" alt="Screen Shot 10-22-17 at 08.48 PM" width="2161" height="612" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-48-pm.png 2161w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-48-pm-300x85.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-48-pm-768x217.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-48-pm-1024x290.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-48-pm.png)
 
 install and easily configure the kubectl CLI
 
-<img class="alignnone size-full wp-image-519" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-51-pm.jpg" alt="Screen Shot 10-22-17 at 08.51 PM" width="1388" height="881" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-51-pm.jpg 1388w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-51-pm-300x190.jpg 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-51-pm-768x487.jpg 768w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-51-pm-1024x650.jpg 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-51-pm.jpg)
 
 or launch it from your web browser:
 
-<img class="alignnone size-full wp-image-513" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-50-pm-001.png" alt="Screen Shot 10-22-17 at 08.50 PM 001" width="897" height="420" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-50-pm-001.png 897w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-50-pm-001-300x140.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-50-pm-001-768x360.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-50-pm-001.png)
 
 #### Catalog:
 
 Rancher has of course kept its catalog, from which new apps can easily be deployed. The library contains, among others, [Helm][4], the &#8220;Kubernetes Package Manager&#8221; which allows easy apps deployment on Kubernetes.
 
-<img class="alignnone size-full wp-image-531" src="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-59-pm.png" alt="Screen Shot 10-22-17 at 08.59 PM.PNG" width="1763" height="1074" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-59-pm.png 1763w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-59-pm-300x183.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-59-pm-768x468.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-59-pm-1024x624.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/10/screen-shot-10-22-17-at-08-59-pm.png)
 
 ### Roadmap:
 

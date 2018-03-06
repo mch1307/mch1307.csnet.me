@@ -1,7 +1,7 @@
 ---
 author:  "mch1307"
-categories: ["rancher","traefik","containers"]
-tags: ["tutorial"]
+categories: ["containers"]
+tags: ["rancher","traefik"]
 date: "2017-07-12"
 description: Traefik as a Dynamically-Configured Proxy and Load-Balancer
 featured: grpc.png

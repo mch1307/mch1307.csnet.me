@@ -66,31 +66,29 @@ Let&#8217;s start the app on two hosts:
 
 Once the app is started, go to Consul UI and check the service tab:
 
-<img class="alignnone size-full wp-image-109" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-12-am.png" alt="Screen Shot 08-22-17 at 08.12 AM" width="1551" height="626" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-12-am.png 1551w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-12-am-300x121.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-12-am-768x310.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-12-am-1024x413.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-12-am.png)
 
 Check the load balancer state on Traefik UI:
 
-<img class="alignnone size-full wp-image-110" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-22-am.png" alt="Screen Shot 08-22-17 at 08.22 AM" width="1463" height="652" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-22-am.png 1463w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-22-am-300x134.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-22-am-768x342.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-22-am-1024x456.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-22-am.png)
 
 We have no k/v setup on Consul at PUBLIC/whoamI:
 
-<img class="alignnone size-full wp-image-98" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-08-pm.png" alt="Screen Shot 08-20-17 at 09.08 PM" width="1790" height="737" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-08-pm.png 1790w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-08-pm-300x124.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-08-pm-768x316.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-08-pm-1024x422.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-08-pm.png)
 
 Browse to the app web page, the default banner is displayed, and the requests are balanced among the 2 hosts. If we stop the app one one of the 2 hosts, Traefik will automatically stop sending requests to the &#8220;failing&#8221; host.
 
-<img class="alignnone size-full wp-image-111" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am.png" alt="Screen Shot 08-22-17 at 08.30 AM" width="445" height="279" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am.png 445w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am-300x188.png 300w" sizes="(max-width: 445px) 100vw, 445px" />
+![](/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am.png)
 
-<img class="alignnone size-full wp-image-112" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am-001.png" alt="Screen Shot 08-22-17 at 08.30 AM 001" width="445" height="279" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am-001.png 445w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am-001-300x188.png 300w" sizes="(max-width: 445px) 100vw, 445px" />
-
-&nbsp;
+![](/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-30-am-001.png)
 
 Now we setup the banner k/v in Consul:
 
-<img class="alignnone size-full wp-image-97" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-07-pm.png" alt="Screen Shot 08-20-17 at 09.07 PM" width="1737" height="614" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-07-pm.png 1737w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-07-pm-300x106.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-07-pm-768x271.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-07-pm-1024x362.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/08/screen-shot-08-20-17-at-09-07-pm.png)
 
 And refresh our browser to see the new banner displayed:
 
-<span style="color:#808080;"><em><strong><img class="alignnone size-full wp-image-113" src="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-33-am.png" alt="Screen Shot 08-22-17 at 08.33 AM" width="926" height="279" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-33-am.png 926w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-33-am-300x90.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-33-am-768x231.png 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" /><br /> </strong></em></span>
+![](/wp-content/uploads/2017/08/screen-shot-08-22-17-at-08-33-am.png)
 
 The source code is available [on GitHub][5], any comment/feedback/star is welcome.
 

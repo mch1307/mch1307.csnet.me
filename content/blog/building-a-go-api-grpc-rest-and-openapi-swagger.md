@@ -1,7 +1,7 @@
 +++
 author = "mch1307"
-categories = ["go","grpc","api"]
-tags = ["tutorial"]
+categories = ["go"]
+tags = ["go","grpc","api"]
 date = "2017-12-13"
 description = "Learn how to create a theme on Hugo"
 featured = "grpc.png"

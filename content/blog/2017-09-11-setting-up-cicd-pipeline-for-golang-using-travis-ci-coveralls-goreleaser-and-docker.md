@@ -13,7 +13,7 @@ tags:
   - coveralls
   - docker
   - github releases
-  - golang
+  - go
   - goreleaser
   - travis-ci
 
