@@ -7,11 +7,12 @@ url: /2017/08/20/traefikconsul-demo-app-my-first-go-dev/
 featured: tr-consul.png
 featuredpath: date
 categories:
-  - Uncategorized
+  - go
+  - consul
 tags:
   - consul
   - demo
-  - golang
+  - go
   - traefik
 
 ---
