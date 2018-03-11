@@ -21,7 +21,7 @@ Gomotics is a small program written in Go that aims offering easy to consume Res
 
 ## Demo
 
-[wpvideo qvNBVYNU]
+{{< vimeo 242817325 >}}
 
 ## Installation
 
