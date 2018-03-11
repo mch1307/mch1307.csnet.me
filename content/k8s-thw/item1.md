@@ -17,9 +17,9 @@ While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][20
 
 I wanted to do the setup on-premises (using VMs), meaning no cloud provider. So I had to &#8220;adapt&#8221; the tutorial accordingly. As I have spent some time getting everything up and running, I have decided to share my experience through a series of posts.
 
-This is just an adaptation of THE guide and a share of my experience, which I hope will be helpful to others.
+This is just an adaptation of THE guide and a sharing of my experience, which I hope will be helpful to others.
 
-The tutorial is organized in 10 main steps as follows:
+The tutorial is organized in the following steps:
 
   1. [Planning the Installation and Provisioning VMs][1]
   2. [Provisioning TLS certificates][2]
@@ -32,8 +32,6 @@ The tutorial is organized in 10 main steps as follows:
   9. [Deploying Cluster Add-ons][9]
 
 [Next: Plan the Installation and Provisioning VMs][1]
-
-
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2
