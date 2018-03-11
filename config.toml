@@ -13,7 +13,7 @@ canonifyURLs = true
 
 [params]
   # Sets the meta tag description
-  description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
+  description          = "#containers, #oss, #go"
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "mch1307"
   # Sets where "View More Posts" links
@@ -128,11 +128,11 @@ canonifyURLs = true
   identifier = "fa fa-newspaper-o"
   weight = 3
 
-[[menu.main]]
-  name = "k8s - thw"
-  url = "/k8s-thw/"
-  identifier = "fa fa-list"
-  weight = 5
+#[[menu.main]]
+#  name = "k8s - thw"
+#  url = "/k8s-thw/"
+#  identifier = "fa fa-list"
+#  weight = 5
 
 [[menu.main]]
   name = "gomotics"
