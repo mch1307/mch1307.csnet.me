@@ -38,10 +38,10 @@ canonifyURLs = true
   # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
   # These are stored in the favicon folder. See the following for more information:
   # https://github.com/audreyr/favicon-cheat-sheet
-  #loadFavicon          = true
-  # faviconVersion       = ""
+  # loadFavicon          = false
+  #faviconVersion       = "favicon.ico"
   # Sets Social Share links to appear on posts
-  socialShare          = true
+  socialShare          = false
   # Sets specific share to appear on posts (default behavior is to appear)
   socialShareTwitter   = true
   socialShareGoogleplus = true
@@ -201,3 +201,6 @@ canonifyURLs = true
   researchgate     = ""
   # Email
   email            = ""
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
