@@ -8,7 +8,7 @@ date = "2018-03-04"
 featured = ""
 featuredpath = ""
 featuredalt = ""
-categories = ["kubernetes"]
+categories = [""]
 #format = "Android"
 link = "#"
 +++
