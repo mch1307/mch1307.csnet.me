@@ -289,7 +289,7 @@ produces: "application/json";
   
 };
 ```
-  
+
 
 We can now invoke protoc with the following arguments to generate our OpenAPI json file:
 
@@ -299,7 +299,8 @@ protoc -I. -I%GOPATH%\src -I%GOPATH%\src\github.com\grpc-ecosystem\grpc-gateway\
 
 This is what the generated file looks like:
 
-<img class="alignnone size-full wp-image-799" src="http://10.32.2.123:8080/wp-content/uploads/2017/12/screen-shot-12-13-17-at-01-53-pm.png" alt="Screen Shot 12-13-17 at 01.53 PM" width="1612" height="1291" srcset="http://10.32.2.123:8080/wp-content/uploads/2017/12/screen-shot-12-13-17-at-01-53-pm.png 1612w, http://10.32.2.123:8080/wp-content/uploads/2017/12/screen-shot-12-13-17-at-01-53-pm-300x240.png 300w, http://10.32.2.123:8080/wp-content/uploads/2017/12/screen-shot-12-13-17-at-01-53-pm-768x615.png 768w, http://10.32.2.123:8080/wp-content/uploads/2017/12/screen-shot-12-13-17-at-01-53-pm-1024x820.png 1024w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px" />
+![](/wp-content/uploads/2017/12/screen-shot-12-13-17-at-01-53-pm.png)
+
 
 ## Conclusion
 
