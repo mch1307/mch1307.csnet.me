@@ -9,7 +9,7 @@ featuredpath : date
 linktitle: Traefik as a Dynamically-Configured Proxy and Load-Balancer
 title: Traefik as a Dynamically-Configured Proxy and Load-Balancer
 type: post
-
+archives: ["2017"]
 ---
 _**This post has also been published on [Rancher.com][1] on 12-07-2017**_
 

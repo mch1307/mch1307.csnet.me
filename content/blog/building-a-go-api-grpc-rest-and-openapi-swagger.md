@@ -9,6 +9,7 @@ featuredpath = "date"
 linktitle = ""
 title = "Building a Go Api: gRPC, Rest and OpenApi (swagger)"
 type = "post"
+archives = ["2017"]
 
 +++
 

@@ -1,0 +1,28 @@
+{{ partial "general-title" . }}
+
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+            {{ $.Scratch.Set "archives" .Data.Terms.Alphabetical }}
+        <ul class="posts">
+            <header>
+                <h1>{{ .Data.Plural }}</h1>
+            </header>
+            {{ $data := .Data }}
+            {{ range $key, $value := $.Scratch.Get "archives" }}
+                <li>
+                    <article>
+                        <header>
+                                <a href="{{"/" | relURL}}{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
+                                <span style="float:right;">{{ $value.Count }}</span>
+                        </header>
+                    </article>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    {{ $.Scratch.Set "showArchives" false }}
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}

@@ -14,7 +14,7 @@ tags:
   - demo
   - go
   - traefik
-
+archives: ["2017"]
 ---
 If you don&#8217;t mind my interesting story, scroll down to the &#8220;quick demo overview&#8221; 😉
 

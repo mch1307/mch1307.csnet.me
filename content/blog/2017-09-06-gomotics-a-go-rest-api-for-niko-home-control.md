@@ -6,6 +6,7 @@ date: 2017-09-06T10:53:02+00:00
 url: /2017/09/06/gomotics-a-go-rest-api-for-niko-home-control/
 categories:
   - gomotics
+archives: ["2017"]
 
 ---
 I am developing a small domotics back-end in Go, mainly as a learning method. I already did that [in NodeJs][1] and as I wanted to learn Golang, I decided to re-develop same kind of tool. This time, I am doing it more &#8220;properly&#8221; in terms of testing coverage. And as Go is a compiled language, I have setup an automated build, test and release process using Travis CI, Coveralls and [goreleaser][2]. Those tools are amazing!

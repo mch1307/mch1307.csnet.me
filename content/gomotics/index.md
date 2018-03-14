@@ -3,7 +3,6 @@ title: gomotics
 author: mch1307
 type: page
 date: 2017-08-27T20:36:33+00:00
-
 ---
 [![][1]][2] [![][3]][4] [![Coverage Status][5]][6]
 

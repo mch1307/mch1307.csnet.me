@@ -10,7 +10,7 @@ categories:
   - containers
 tags:
   - rancher
-
+archives: ["2017"]
 ---
 Rancher Labs has released [Rancher 2.0 Tech Preview][1] on 26th of September. The 2.0 release is a significant one as it brings many changes compared to 1.x versions. Based on current Rancher users feedback, market trends (almost all major infrastructure providers offer &#8220;Kubernetes-As-A-Service&#8221;), and some vision (&#8220;Kubernetes everywhere&#8221;), they have re-engineered Rancher 2.0 to be fully based on [Kubernetes][2].
 

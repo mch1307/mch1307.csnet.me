@@ -16,7 +16,7 @@ tags:
   - go
   - goreleaser
   - travis-ci
-
+archives: ["2017"]
 ---
 ## Overview
 

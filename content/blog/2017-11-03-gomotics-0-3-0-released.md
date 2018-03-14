@@ -6,7 +6,8 @@ date: 2017-11-03T22:28:39+00:00
 url: /2017/11/03/gomotics-0-3-0-released/
 categories:
   - gomotics
-
+  - go
+archives: ["2017"]
 ---
 [gomotics][1] is a Go API for Niko Home Control.
 
