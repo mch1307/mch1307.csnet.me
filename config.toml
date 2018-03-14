@@ -1,4 +1,4 @@
-baseurl = "https://www.csnet.me"
+baseurl = "https://blog.csnet.me"
 languageCode = "en-us"
 title = "mch1307's blog"
 theme = "hugo-future-imperfect"
