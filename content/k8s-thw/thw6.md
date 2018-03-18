@@ -1,17 +1,19 @@
-+++
-title = "On-Prem k8s | Part 6"
-linktitle = "On-Prem k8s | Part 6"
-description = "Bootstrapping k8s Control Plane"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 6"
+linktitle: "On-Prem k8s | Part 6"
+description: "Bootstrapping k8s Control Plane"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 7
+draft: true
+---
 
 
 ## [Bootstrapping k8s Worker Nodes >][7]

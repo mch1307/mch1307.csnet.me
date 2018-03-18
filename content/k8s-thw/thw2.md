@@ -1,22 +1,24 @@
-+++
-title = "On-Prem k8s | Part 2"
-linktitle = "On-Prem k8s | Part 2"
-description = "Provisioning TLS certificates"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 2"
+linktitle: "On-Prem k8s | Part 2"
+description: "Provisioning TLS certificates"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 3
+draft: true
+---
 
 
-## [Generating Kubeconfig files >][3]
+#### [Next: Generating Kubeconfig files][3]
 
-## [< Planning the Installation and Provisioning VMs][1]
+#### [Previous: Planning the Installation and Provisioning VMs][1]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2

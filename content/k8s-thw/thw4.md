@@ -1,17 +1,19 @@
-+++
-title = "On-Prem k8s | Part 4"
-linktitle = "On-Prem k8s | Part 4"
-description = "Generating the Data Encryption Config"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 4"
+linktitle: "On-Prem k8s | Part 4"
+description: "Generating the Data Encryption Config"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 5
+draft: true
+---
 
 
 ## [Bootstrapping etcd Cluster >][5]

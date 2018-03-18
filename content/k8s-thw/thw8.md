@@ -1,17 +1,19 @@
-+++
-title = "On-Prem k8s | Part 8"
-linktitle = "On-Prem k8s | Part 8"
-description = "Configuring Networking"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 8"
+linktitle: "On-Prem k8s | Part 8"
+description: "Configuring Networking"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 9
+draft: true
+---
 
 
 ## [Deploying Cluster Add-ons >][9]

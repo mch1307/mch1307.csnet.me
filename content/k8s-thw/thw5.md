@@ -1,17 +1,19 @@
-+++
-title = "On-Prem k8s | Part 5"
-linktitle = "On-Prem k8s | Part 5"
-description = "Bootstrapping etcd Cluster"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 5"
+linktitle: "On-Prem k8s | Part 5"
+description: "Bootstrapping etcd Cluster"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 6
+draft: true
+---
 
 
 ## [Bootstrapping k8s Control Plane >][6]

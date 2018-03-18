@@ -1,17 +1,19 @@
-+++
-title = "On-Prem k8s | Part 3"
-linktitle = "On-Prem k8s | Part 3"
-description = "Generating Kubeconfig files"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 3"
+linktitle: "On-Prem k8s | Part 3"
+description: "Generating Kubeconfig files"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 4
+draft: true
+---
 
 
 ## [Generating the Data Encryption Config >][4]

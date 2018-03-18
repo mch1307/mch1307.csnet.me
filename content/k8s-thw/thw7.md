@@ -1,17 +1,19 @@
-+++
-title = "On-Prem k8s | Part 7"
-linktitle = "On-Prem k8s | Part 7"
-description = "Bootstrapping k8s Worker Nodes"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Prem k8s | Part 7"
+linktitle: "On-Prem k8s | Part 7"
+description: "Bootstrapping k8s Worker Nodes"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 8
+draft: true
+---
 
 
 ## [Configuring Networking >][8]

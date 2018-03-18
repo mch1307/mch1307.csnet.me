@@ -1,17 +1,19 @@
-+++
-title = "On-Premises Kubernetes… The Hard Way"
-linktitle = "Kubernetes"
-description = "On-Premises Kubernetes… The Hard Way"
-type = "itemized"
-author = "mch1307"
-date = "2018-03-04"
-featured = ""
-featuredpath = ""
-featuredalt = ""
-categories = [""]
-#format = "Android"
-link = "#"
-+++
+---
+title: "On-Premises Kubernetes… The Hard Way"
+linktitle: "Kubernetes"
+description: "On-Premises Kubernetes… The Hard Way"
+type: "itemized"
+author: "mch1307"
+date: "2018-03-04"
+featured: ""
+featuredpath: ""
+featuredalt: ""
+categories: [""]
+#format: "Android"
+link: "#"
+weight: 1
+draft: true
+---
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
 
@@ -21,7 +23,7 @@ This is just an adaptation of THE guide and a sharing of my experience, which I 
 
 The tutorial is organized in the following steps:
 
-  1. [Planning the Installation and Provisioning VMs][1]
+  1. [Planning the Installation][1]
   2. [Provisioning TLS certificates][2]
   3. [Generating Kubeconfig files][3]
   4. [Generating the Data Encryption Config][4]
@@ -31,7 +33,7 @@ The tutorial is organized in the following steps:
   8. [Configuring Networking][8]
   9. [Deploying Cluster Add-ons][9]
 
-[Next: Plan the Installation and Provisioning VMs][1]
+#### [Next: Plan the Installation and Provisioning VMs][1]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2
