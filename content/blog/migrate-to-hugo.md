@@ -10,15 +10,14 @@ linktitle = ""
 title = "From WP.com to Hugo on Netlify"
 type = "post"
 archives = ["2018"]
-
 +++
 
 When I decided to start blogging and have my own "site", I chose Wordpress.com as it is was for me the easiest and most comfortable solution.
 I have been using it for a few month and to be fair, I think the product and service are ok. 
 
-The main painpoints to me are:
+The main pain points to me are:
 
-* authoring and preview 
+* authoring and preview
 * having to move to a more expensive plan in order to install plugin
 
 So I decided to have a look at [Hugo][1], a fast static web site generator.
