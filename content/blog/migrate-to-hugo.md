@@ -1,17 +1,17 @@
----
-author: "mch1307"
-categories: []
-tags: ["hugo", "netlify"]
-date: "2018-03-18"
-description: "blog.csnet.me now powered by Hugo, deployed and hosted on Netlify"
-featured: "migrate-to-hugo.png"
-featuredpath: "date"
-linktitle: ""
-title: "From WP.com to Hugo on Netlify"
-type: "post"
-archives: ["2018"]
++++
+author = "mch1307"
+categories = []
+tags = ["hugo", "netlify"]
+date = "2018-03-18"
+description = "blog.csnet.me now powered by Hugo, deployed and hosted on Netlify"
+featured = "migrate-to-hugo.png"
+featuredpath = "date"
+linktitle = ""
+title = "From WP.com to Hugo on Netlify"
+type = "post"
+archives = ["2018"]
 
----
++++
 
 When I decided to start blogging and have my own "site", I chose Wordpress.com as it is was for me the easiest and most comfortable solution.
 I have been using it for a few month and to be fair, I think the product and service are ok. 
