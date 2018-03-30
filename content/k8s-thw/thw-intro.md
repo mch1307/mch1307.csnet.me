@@ -1,7 +1,7 @@
 ---
 title: "On-Premises Kubernetes… The Hard Way"
 linktitle: "Kubernetes"
-description: "On-Premises Kubernetes… The Hard Way"
+description: "Step by step k8s on-premises deployment"
 type: "itemized"
 author: "mch1307"
 date: "2018-03-04"
