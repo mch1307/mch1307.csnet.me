@@ -17,6 +17,8 @@ draft: true
 
 ## Machines
 
+{{% alert theme="info" %}}This tutorial assumes you already have the basic infrastructure blocks like DHCP or DNS up and running.{{% /alert %}}
+
 We will setup a HA Kubernetes cluster, with 3 control plane nodes and 3 worker nodes.
 
 We will also need a load balancer in front of the Kubernetes API server. We will use HAProxy.
@@ -35,9 +37,7 @@ The following table contains the list of hosts to be provisioned.
 | k8swrk3  | 10.32.2.96  | worker        |
 | haprx1  | 10.32.2.97  | load balancer |
 
-The details of provisionning the VMs is out of scope as they depend on the infrastructure. In my case, I am using Vmware ESX and will manually provison the hosts from a template.
-
-    This tutorial assumes you have the basic infrastructure blocks like DNS service.
+{{% alert theme="info" %}}The details of provisionning the VMs is out of scope as they depend on the infrastructure. In my case, I am using Vmware ESX and will manually provison the hosts from a template.{{% /alert %}}
 
 ## Versions
 
@@ -49,14 +49,18 @@ We will be using the following versions:
 
 ## Network information
 
+This section contain additional network information to be clear on LAN, k8s networks and other important IPs
+
 | Network / IP | Description
 | --- | ---
 | 10.32.2.0/24 | LAN (csnet.me)
-| 10.16.0.0 | k8s CIDR network
-| 10.10.0.0 | k8s Services network
+| 10.16.0.0 | k8s Pod network
+| 10.10.0.0 | k8s Service network
 | 10.10.0.1 | k8s API server
 | 10.10.0.10 | k8s dns
 
+
+Once the machines are ready, we can head to next part
 
 #### [Next: Provisioning TLS certificates >][2]
 
