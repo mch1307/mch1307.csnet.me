@@ -47,7 +47,7 @@ sudo mv kubectl /usr/local/bin/kubectl
 
 ### kubelet
 
->Kubelets need to be properly authorized by the Kubernetes Node Authorizer. We will include each worker node's individual client certificate in the kubeconfig file
+>Kubelet needs to be properly authorized by the [Kubernetes Node Authorizer][24]. We will include each worker node's individual client certificate in the kubeconfig file
 
 Generate a kubelet kubeconfig file for each of our worker nodes:
 
@@ -77,7 +77,9 @@ done
 The following files have been generated:
 
 ```
-
+k8swrk1.kubeconfig
+k8swrk2.kubeconfig
+k8swrk3.kubeconfig
 ```
 
 ### kube-proxy
@@ -105,7 +107,7 @@ kubectl config use-context default --kubeconfig=kube-proxy.kubeconfig
 Generated file:
 
 ```
-
+kube-proxy.kubeconfig
 ```
 
 ## Distribute the kubeconfig files
@@ -114,7 +116,7 @@ We now need to copy the generated kubeconfig files to each woker node:
 
 ```
 for instance in k8swrk1 k8swrk2 k8swrk3; do
-scp ${instance}.kubeconfig kube-proxy.kubeconfig $instance:~/
+  scp ${instance}.kubeconfig kube-proxy.kubeconfig $instance:~/
 done
 ```
 
@@ -135,3 +137,4 @@ done
  [21]: https://kubernetes.io/docs/reference/kubectl/overview/
  [22]: https://kubernetes.io/docs/reference/generated/kubelet/
  [23]: https://kubernetes.io/docs/reference/generated/kube-proxy/
+ [24]: https://kubernetes.io/docs/admin/authorization/node/
