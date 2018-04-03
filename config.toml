@@ -74,11 +74,14 @@ canonifyURLs = true
   # options for highlight.js (version, additional languages, and theme)
   disable_highlight = false # set to true to disable Highlight
   highlightjsVersion = "9.12.0"
-  highlightjsCDN = "//cdn.bootcss.com"
+  #highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs" 
+  #/highlight.js/9.12.0/highlight.min.js
   highlightjsLang = ["yaml", "go"]
   highlightjsTheme = "github"
-  MathJaxCDN = "//cdn.bootcss.com"
-  MathJaxVersion = "2.7.1"
+  #MathJaxCDN = "//cdn.bootcss.com"
+  MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
+  MathJaxVersion = "2.7.4"
 
 # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
 # due to its ease of use. Feel free to check out both and decide what you would
@@ -142,13 +145,13 @@ canonifyURLs = true
 #[[menu.main]]
 #  name = "k8s - thw"
 #  url = "/k8s-thw/"
-#  identifier = "fa fa-list"
+#  identifier = "fa fa-book"
 #  weight = 5
 
 [[menu.main]]
   name = "gomotics"
   url = "/gomotics/"
-#  identifier = "fa fa-id-card-o"
+  identifier = "fa fa-magic"
   weight = 6
 
 #[[menu.main]]
