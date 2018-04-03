@@ -4,7 +4,7 @@ linktitle: "On-Prem k8s | Part 4"
 description: "Generating the Data Encryption Config"
 type: "itemized"
 author: "mch1307"
-date: "2018-03-04"
+date: "2018-04-02"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -15,10 +15,57 @@ weight: 5
 draft: true
 ---
 
+# Secret data encryption
 
-## [Bootstrapping etcd Cluster >][5]
+Kubernetes supports [data encryption at rest][20] to securely store data in the etcd k/v database.
 
-## [< Generating Kubeconfig files][3]
+In this section, we will create a Kubernetes encryption config manifest to specify the resource we want to be encrypted, the encryption mechanism and key.
+
+Later, the kube-api server will be started with the `--experimental-encryption-provider-config` flag in order to enable data encryption at rest
+
+## Encryption key
+
+First, we generate a random key, base64 encoded:
+
+```
+ENCRYPTION_KEY=`head -c 32 /dev/urandom | base64`
+```
+
+## Kubernetes manifest file
+
+Generate the Kubernetes yaml file that will later be used for enabling secret data encryption. Head [here][21] if you want more information about encryption at rest.
+
+```
+cat > encryption-config.yaml <<EOF
+kind: EncryptionConfig
+apiVersion: v1
+resources:
+  - resources:
+      - secrets
+    providers:
+      - aescbc:
+          keys:
+            - name: key
+              secret: ${ENCRYPTION_KEY}
+      - identity: {}
+EOF
+```
+
+## Distribute the file
+
+Copy the generated file to the three controller nodes
+
+```
+for instance in k8sctl1 k8sctl2 k8sctl3; do
+    scp encryption-config.yaml $instance:~/
+done
+```
+
+
+
+#### [Next: Bootstrapping etcd Cluster >][5]
+
+#### [< Previous: Generating Kubeconfig files][3]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2
@@ -29,3 +76,5 @@ draft: true
  [7]: /k8s-thw/thw7
  [8]: /k8s-thw/thw8
  [9]: /k8s-thw/thw9
+[20]: https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+[21]: https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#understanding-the-encryption-at-rest-configuration
