@@ -33,7 +33,7 @@ The tutorial is organized in the following steps:
   8. [Configuring Networking][8]
   9. [Deploying Cluster Add-ons][9]
 
-#### [Next: Plan the Installation and Provisioning VMs][1]
+#### [Next: Plan the Installation and Provisioning VMs >][1]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2

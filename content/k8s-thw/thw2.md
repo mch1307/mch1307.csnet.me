@@ -296,9 +296,9 @@ done
 ```
 
 
-#### [Next: Generating Kubeconfig files][3]
+#### [Next: Generating Kubeconfig files >][3]
 
-#### [Previous: Planning the Installation and Provisioning VMs][1]
+#### [< Previous: Planning the Installation and Provisioning VMs][1]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2

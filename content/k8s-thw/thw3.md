@@ -120,9 +120,9 @@ for instance in k8swrk1 k8swrk2 k8swrk3; do
 done
 ```
 
-#### [Next: Generating the Data Encryption Config][4]
+#### [Next: Generating the Data Encryption Config >][4]
 
-#### [Previous: Provisioning TLS certificates][2]
+#### [< Previous: Provisioning TLS certificates][2]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2

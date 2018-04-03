@@ -136,7 +136,7 @@ b826932a88befba, started, k8sctl1, https://10.32.2.91:2380, https://10.32.2.91:2
 
 #### [Next: Bootstrapping k8s Control Plane >][6]
 
-#### [<Previous: Generating the Data Encryption Config][4]
+#### [< Previous: Generating the Data Encryption Config][4]
 
  [1]: /k8s-thw/thw1
  [2]: /k8s-thw/thw2
