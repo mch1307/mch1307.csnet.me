@@ -13,6 +13,7 @@ categories: [""]
 link: "#"
 weight: 6
 draft: true
+url: /k8s-thw/part5/
 ---
 
 Kubernetes stores cluster states in an etcd k/v store. We will now setup a three nodes etcd cluster for high availability.
@@ -23,7 +24,7 @@ Kubernetes stores cluster states in an etcd k/v store. We will now setup a three
 
 ```
 wget -q --show-progress --https-only --timestamping \
-  "https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz"
+    "https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz"
 ```
 
 Extract and copy **etcd** and **etcdctl** binaries to your PATH
@@ -138,12 +139,12 @@ b826932a88befba, started, k8sctl1, https://10.32.2.91:2380, https://10.32.2.91:2
 
 #### [< Previous: Generating the Data Encryption Config][4]
 
- [1]: /k8s-thw/thw1
- [2]: /k8s-thw/thw2
- [3]: /k8s-thw/thw3
- [4]: /k8s-thw/thw4
- [5]: /k8s-thw/thw5
- [6]: /k8s-thw/thw6
- [7]: /k8s-thw/thw7
- [8]: /k8s-thw/thw8
- [9]: /k8s-thw/thw9
+ [1]: /k8s-thw/part1
+ [2]: /k8s-thw/part2
+ [3]: /k8s-thw/part3
+ [4]: /k8s-thw/part4
+ [5]: /k8s-thw/part5
+ [6]: /k8s-thw/part6
+ [7]: /k8s-thw/part7
+ [8]: /k8s-thw/part8
+ [9]: /k8s-thw/part9
