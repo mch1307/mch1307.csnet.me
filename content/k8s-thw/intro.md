@@ -13,6 +13,7 @@ categories: [""]
 link: "#"
 weight: 1
 draft: true
+url: /k8s-thw/intro/
 ---
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
@@ -35,15 +36,15 @@ The tutorial is organized in the following steps:
 
 #### [Next: Plan the Installation and Provisioning VMs >][1]
 
- [1]: /k8s-thw/thw1
- [2]: /k8s-thw/thw2
- [3]: /k8s-thw/thw3
- [4]: /k8s-thw/thw4
- [5]: /k8s-thw/thw5
- [6]: /k8s-thw/thw6
- [7]: /k8s-thw/thw7
- [8]: /k8s-thw/thw8
- [9]: /k8s-thw/thw9
+ [1]: /k8s-thw/part1
+ [2]: /k8s-thw/part2
+ [3]: /k8s-thw/part3
+ [4]: /k8s-thw/part4
+ [5]: /k8s-thw/part5
+ [6]: /k8s-thw/part6
+ [7]: /k8s-thw/part7
+ [8]: /k8s-thw/part8
+ [9]: /k8s-thw/part9
  [100]: https://github.com/kubernetes/minikube
  [200]: https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/
  [300]: https://github.com/kelseyhightower/kubernetes-the-hard-way
