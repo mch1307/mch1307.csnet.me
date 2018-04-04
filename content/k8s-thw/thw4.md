@@ -13,6 +13,7 @@ categories: [""]
 link: "#"
 weight: 5
 draft: true
+url: /k8s-thw/part4/
 ---
 
 # Secret data encryption
@@ -67,14 +68,14 @@ done
 
 #### [< Previous: Generating Kubeconfig files][3]
 
- [1]: /k8s-thw/thw1
- [2]: /k8s-thw/thw2
- [3]: /k8s-thw/thw3
- [4]: /k8s-thw/thw4
- [5]: /k8s-thw/thw5
- [6]: /k8s-thw/thw6
- [7]: /k8s-thw/thw7
- [8]: /k8s-thw/thw8
- [9]: /k8s-thw/thw9
+ [1]: /k8s-thw/part1
+ [2]: /k8s-thw/part2
+ [3]: /k8s-thw/part3
+ [4]: /k8s-thw/part4
+ [5]: /k8s-thw/part5
+ [6]: /k8s-thw/part6
+ [7]: /k8s-thw/part7
+ [8]: /k8s-thw/part8
+ [9]: /k8s-thw/part9
 [20]: https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
 [21]: https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/#understanding-the-encryption-at-rest-configuration

@@ -13,6 +13,7 @@ categories: [""]
 link: "#"
 weight: 3
 draft: true
+url: /k8s-thw/part2/
 ---
 
 # PKI Infrastructure
@@ -300,15 +301,15 @@ done
 
 #### [< Previous: Planning the Installation and Provisioning VMs][1]
 
- [1]: /k8s-thw/thw1
- [2]: /k8s-thw/thw2
- [3]: /k8s-thw/thw3
- [4]: /k8s-thw/thw4
- [5]: /k8s-thw/thw5
- [6]: /k8s-thw/thw6
- [7]: /k8s-thw/thw7
- [8]: /k8s-thw/thw8
- [9]: /k8s-thw/thw9
+ [1]: /k8s-thw/part1
+ [2]: /k8s-thw/part2
+ [3]: /k8s-thw/part3
+ [4]: /k8s-thw/part4
+ [5]: /k8s-thw/part5
+ [6]: /k8s-thw/part6
+ [7]: /k8s-thw/part7
+ [8]: /k8s-thw/part8
+ [9]: /k8s-thw/part9
  [10]: https://blog.cloudflare.com/how-to-build-your-own-public-key-infrastructure/
  [11]: https://www.cloudflare.com/
  [12]: https://github.com/cloudflare/cfssl
