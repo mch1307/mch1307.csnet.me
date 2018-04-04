@@ -13,6 +13,7 @@ categories: [""]
 link: "#"
 weight: 2
 draft: true
+url: /k8s-thw/part1/
 ---
 
 ## Machines
@@ -43,8 +44,9 @@ The following table contains the list of hosts to be provisioned.
 
 We will be using the following versions:
 
-* Kubernetes 1.9.3
-* docker 
+* Kubernetes v1.10.0
+* etcd v3.2.18
+* docker
 * weave
 
 ## Network information
@@ -54,8 +56,8 @@ This section contain additional network information to be clear on LAN, k8s netw
 | Network / IP | Description
 | --- | ---
 | 10.32.2.0/24 | LAN (csnet.me)
-| 10.16.0.0 | k8s Pod network
-| 10.10.0.0 | k8s Service network
+| 10.16.0.0/16 | k8s Pod network
+| 10.10.0.0/22 | k8s Service network
 | 10.10.0.1 | k8s API server
 | 10.10.0.10 | k8s dns
 
@@ -64,12 +66,12 @@ Once the machines are ready, we can head to next part
 
 #### [Next: Provisioning TLS certificates >][2]
 
- [1]: /k8s-thw/thw1
- [2]: /k8s-thw/thw2
- [3]: /k8s-thw/thw3
- [4]: /k8s-thw/thw4
- [5]: /k8s-thw/thw5
- [6]: /k8s-thw/thw6
- [7]: /k8s-thw/thw7
- [8]: /k8s-thw/thw8
- [9]: /k8s-thw/thw9
+ [1]: /k8s-thw/part1
+ [2]: /k8s-thw/part2
+ [3]: /k8s-thw/part3
+ [4]: /k8s-thw/part4
+ [5]: /k8s-thw/part5
+ [6]: /k8s-thw/part6
+ [7]: /k8s-thw/part7
+ [8]: /k8s-thw/part8
+ [9]: /k8s-thw/part9
