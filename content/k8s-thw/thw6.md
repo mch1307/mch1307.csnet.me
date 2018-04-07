@@ -250,7 +250,7 @@ sudo systemctl start kube-apiserver kube-controller-manager kube-scheduler
 
 {{% alert theme="info" %}}The Kubernetes API Server takes some time to fully initialize.{{% /alert %}}
 
-## Verification
+## Checks
 
 ```
 kubectl get componentstatuses
@@ -267,9 +267,92 @@ etcd-1               Healthy   {"health": "true"}
 etcd-2               Healthy   {"health": "true"}
 ```
 
-#### [Bootstrapping k8s Worker Nodes >][7]
 
-#### [< Bootstrapping etcd Cluster][5]
+# RBAC for Kubelet Access
+
+The Kubernetes API Server needs access to the Kubelet for executing commands and getting logs and metrics.
+
+When setting up the worker nodes in the next part, we will secure Kubelet by setting the **--authorization-mode** flag to [Webhook][20].
+
+We therefore need to create a [ClusterRole][21] and bind it to the kubernetes user so that Kubernetes API Server can be properly authorized by the Kubelet.
+
+> You can run the below commands on any of the controller nodes
+
+Create the **system:kube-apiserver-to-kubelet** ClusterRole with permissions to access the Kubelet API and perform most common tasks associated with managing pods:
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  annotations:
+    rbac.authorization.kubernetes.io/autoupdate: "true"
+  labels:
+    kubernetes.io/bootstrapping: rbac-defaults
+  name: system:kube-apiserver-to-kubelet
+rules:
+  - apiGroups:
+      - ""
+    resources:
+      - nodes/proxy
+      - nodes/stats
+      - nodes/log
+      - nodes/spec
+      - nodes/metrics
+    verbs:
+      - "*"
+EOF
+```
+
+The Kubernetes API Server authenticates to the Kubelet as the kubernetes user using the client certificate as defined by the **--kubelet-client-certificate** flag specified when starting the API Server.
+
+Bind the **system:kube-apiserver-to-kubelet** ClusterRole to the kubernetes user:
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: system:kube-apiserver
+  namespace: ""
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:kube-apiserver-to-kubelet
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: kubernetes
+EOF
+```
+
+## Checks
+
+Verify we can access the Kubernetes API Server through the HAProxy load balancer:
+
+```
+curl -k https://10.32.2.97:6443/version
+```
+
+You should get a similar output:
+
+```
+{
+  "major": "1",
+  "minor": "10",
+  "gitVersion": "v1.10.0",
+  "gitCommit": "fc32d2f3698e36b93322a3465f63a14e9f0eaead",
+  "gitTreeState": "clean",
+  "buildDate": "2018-03-26T16:44:10Z",
+  "goVersion": "go1.9.3",
+  "compiler": "gc",
+  "platform": "linux/amd64"
+}
+```
+
+#### [Next: Bootstrapping k8s Worker Nodes >][7]
+
+#### [< Previous: Bootstrapping etcd Cluster][5]
 
  [1]: /k8s-thw/part1
  [2]: /k8s-thw/part2
@@ -280,3 +363,5 @@ etcd-2               Healthy   {"health": "true"}
  [7]: /k8s-thw/part7
  [8]: /k8s-thw/part8
  [9]: /k8s-thw/part9
+ [20]: https://kubernetes.io/docs/admin/authorization/webhook/
+ [21]: https://kubernetes.io/docs/admin/authorization/rbac/#role-and-clusterrole
