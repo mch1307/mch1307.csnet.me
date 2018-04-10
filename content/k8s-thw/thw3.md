@@ -67,7 +67,7 @@ for instance in k8swrk1 k8swrk2 k8swrk3; do
     --kubeconfig=${instance}.kubeconfig
 
   kubectl config set-context default \
-    --cluster=kubernetes-the-hard-way \
+    --cluster=kubernetes \
     --user=system:node:${instance} \
     --kubeconfig=${instance}.kubeconfig
 
