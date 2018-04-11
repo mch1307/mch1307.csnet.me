@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "mch1307's blog"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
-paginate = 10
+paginate = 12
 disqusShortname = ""
 googleAnalytics = "UA-104773981-1"
 pluralizeListTitles = false
@@ -72,12 +72,12 @@ canonifyURLs = true
   customJS             = ["default"]
 
   # options for highlight.js (version, additional languages, and theme)
-  disable_highlight = false # set to true to disable Highlight
+  disable_highlight = true # set to true to disable Highlight
   highlightjsVersion = "9.12.0"
   #highlightjsCDN = "//cdn.bootcss.com"
   highlightjsCDN = "//cdnjs.cloudflare.com/ajax/libs" 
   #/highlight.js/9.12.0/highlight.min.js
-  highlightjsLang = ["yaml", "go"]
+  #highlightjsLang = ["yaml", "go"]
   highlightjsTheme = "github"
   #MathJaxCDN = "//cdn.bootcss.com"
   MathJaxCDN = "//cdnjs.cloudflare.com/ajax/libs"
