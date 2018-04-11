@@ -1,10 +1,10 @@
 ---
 title: "On-Prem k8s | Part 9"
 linktitle: "On-Prem k8s | Part 9"
-description: "Deploying Cluster Add-ons"
+description: "Configuring Networking"
 type: "itemized"
 author: "mch1307"
-date: "2018-03-04"
+date: "2018-04-11"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -16,7 +16,10 @@ draft: true
 url: /k8s-thw/part9/
 ---
 
-## [< Configuring Networking][8]
+
+#### [Next: Deploying Cluster Add-ons >][10]
+
+#### [< Bootstrapping k8s Worker Nodes][8]
 
  [1]: /k8s-thw/part1
  [2]: /k8s-thw/part2
@@ -26,4 +29,4 @@ url: /k8s-thw/part9/
  [6]: /k8s-thw/part6
  [7]: /k8s-thw/part7
  [8]: /k8s-thw/part8
- [9]: /k8s-thw/part9
+ [10]: /k8s-thw/part10

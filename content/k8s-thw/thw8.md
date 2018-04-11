@@ -1,10 +1,10 @@
 ---
 title: "On-Prem k8s | Part 8"
 linktitle: "On-Prem k8s | Part 8"
-description: "Configuring Networking"
+description: "Generate kubectl config for remote access"
 type: "itemized"
 author: "mch1307"
-date: "2018-03-04"
+date: "2018-04-10"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -15,11 +15,11 @@ weight: 9
 draft: true
 url: /k8s-thw/part8/
 ---
+cxybyngbygnyg
 
+#### [Deploying Cluster Add-ons >][9]
 
-## [Deploying Cluster Add-ons >][9]
-
-## [< Bootstrapping k8s Worker Nodes][7]
+#### [< Bootstrapping k8s Worker Nodes][7]
 
  [1]: /k8s-thw/part1
  [2]: /k8s-thw/part2
