@@ -31,8 +31,9 @@ The tutorial is organized in the following steps:
   5. [Bootstrapping etcd Cluster][5]
   6. [Bootstrapping k8s Control Plane][6]
   7. [Bootstrapping k8s Worker Nodes][7]
-  8. [Configuring Networking][8]
-  9. [Deploying Cluster Add-ons][9]
+  8. [Generating kubectl config file][8]
+  9. [Configuring Networking][9]
+  10. [Deploying Cluster Add-ons][10]
 
 #### [Next: Plan the Installation and Provisioning VMs >][1]
 
@@ -45,6 +46,7 @@ The tutorial is organized in the following steps:
  [7]: /k8s-thw/part7
  [8]: /k8s-thw/part8
  [9]: /k8s-thw/part9
+ [10]: /k8s-thw/part10
  [100]: https://github.com/kubernetes/minikube
  [200]: https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/
  [300]: https://github.com/kelseyhightower/kubernetes-the-hard-way

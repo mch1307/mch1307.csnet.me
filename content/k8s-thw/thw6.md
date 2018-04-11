@@ -26,15 +26,15 @@ We will now bootstrap the Kubernetes control plane on the three controller nodes
 
 The latest stable version is not available in the default repos
 
-```
+```bash
 sudo add-apt-repository ppa:vbernat/haproxy-1.8
 ```
 
-```
+```bash
 apt-cache policy haproxy
 ```
 
-```
+```bash
 sudo apt-get install haproxy=1.8.5-1ppa1~xenial
 ```
 
@@ -64,17 +64,17 @@ frontend k8s-api
 
 Enable and start the haproxy service
 
-```
+``` bash
 sudo service haproxy enable
 ```
 
-```
+```bash
 sudo service haproxy start
 ```
 
 Check the status:
 
-```
+```bash
 sudo systemctl status haproxy
 ```
 
@@ -91,7 +91,7 @@ The Kubernetes control plane is made up of three components:
 
 ## Install Binaries
 
-```
+```bash
 wget -q --show-progress --https-only --timestamping \
   "https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kube-apiserver" \
   "https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kube-controller-manager" \
@@ -123,11 +123,11 @@ sudo mv ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem encryption-config.ya
 
 Create the **kube-apiserver.sercice** systemd unit file
 
-```
+```bash
 IP=`nslookup $(hostname -s)| awk '/^Address: / { print $2 }'`
 ```
 
-```
+```bash
 cat > kube-apiserver.service <<EOF
 [Unit]
 Description=Kubernetes API Server
@@ -180,7 +180,7 @@ EOF
 
 Create the **kube-controller-manager.service** systemd unit file:
 
-```
+```bash
 cat > kube-controller-manager.service <<EOF
 [Unit]
 Description=Kubernetes Controller Manager
