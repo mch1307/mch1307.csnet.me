@@ -10,6 +10,7 @@ linktitle = ""
 title = "From WP.com to Hugo on Netlify"
 type = "post"
 archives = ["2018"]
+url = "/2018/03/18/migrate-to-hugo/"
 +++
 
 When I decided to start blogging and have my own "site", I chose Wordpress.com as it is was for me the easiest and most comfortable solution.
