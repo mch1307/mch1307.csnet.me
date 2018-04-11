@@ -4,7 +4,7 @@ linktitle: "On-Prem k8s | Part 7"
 description: "Bootstrapping k8s Worker Nodes"
 type: "itemized"
 author: "mch1307"
-date: "2018-04-10"
+date: "2018-04-11"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -269,7 +269,7 @@ k8swrk2   Ready     <none>    7h        v1.10.0
 k8swrk3   Ready     <none>    7h        v1.10.0
 ```
 
-#### [Next: Configuring Networking >][8]
+#### [Next: Generating kubectl config >][8]
 
 #### [< Previous: Bootstrapping k8s Control Plane][6]
 

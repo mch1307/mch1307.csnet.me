@@ -4,7 +4,7 @@ linktitle: "Kubernetes"
 description: "Step by step k8s on-premises deployment"
 type: "itemized"
 author: "mch1307"
-date: "2018-03-04"
+date: "2018-04-11"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -14,6 +14,7 @@ link: "#"
 weight: 1
 draft: true
 url: /k8s-thw/intro/
+tags: ["kubernetes","k8s","cri-o"]
 ---
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
