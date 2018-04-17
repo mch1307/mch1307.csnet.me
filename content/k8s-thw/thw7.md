@@ -17,7 +17,7 @@ url: /k8s-thw/part7/
 ---
 In this section, we will setup the worker nodes. The following components will be installed on each node:
 
-* [**cri-o**][20]
+* [**containerd**][20]
 * [**cni plugins**][21]
 * [**kubelet**][22]
 * [**kube-proxy**][23]
@@ -29,24 +29,9 @@ In this section, we will setup the worker nodes. The following components will b
 
 ## Container runtime
 
-### cri-o install
+### containerd install
 
-cri-o provides a distribution package for Ubuntu, available as [ppa][30].
 
-Add the projectatomic repo to Ubuntu Software Sources:
-
-```bash
-sudo add-apt-repository ppa:projectatomic/ppa
-sudo apt-get update
-```
-
-Install the cri-o package:
-
-```bash
-sudo apt install cri-o-1.10
-```
-
-_cri-o-runc_, _skopeo-containers_ and other required dependencies will be installed if needed.
 
 We will also install the [_cri-tools_][24]
 
@@ -58,23 +43,7 @@ wget -q --show-progress --https-only --timestamping \
 Extract and install the binary:
 
 ```bash
-tar -xvzf crictl-v1.0.0-beta.0-linux-amd64.tar.gz
-chmod +x crictl
-sudo mv crictl /usr/local/bin/
-```
 
-### cri-o basic configuration
-
-The config file comes with default setup. We will only change the __registry__ config. More information on the configuration options is available [here][25]
-
-Edit `/etc/crio/crio.conf` and add docker.io in the list of registry:
-
-```toml
-# registries is used to specify a comma separated list of registries to be used
-# when pulling an unqualified image (e.g. fedora:rawhide).
-registries = [
-  "docker.io"
-]
 ```
 
 
@@ -92,54 +61,17 @@ It will install the binaries in /opt/cni/bin.
 
 ### Configure
 
-We now need to configure the cni plugin:
+We do not need to configure cni as we will setup weave and it will do the necessary setup automagically.
 
-```bash
-sudo mkdir -p /etc/cni/net.d
-```
-
-```bash
-cat > 10-bridge.conf <<EOF
-{
-    "cniVersion": "0.3.1",
-    "name": "bridge",
-    "type": "bridge",
-    "bridge": "cnio0",
-    "isGateway": true,
-    "ipMasq": true,
-    "ipam": {
-        "type": "host-local",
-        "ranges": [
-          [{"subnet": "10.16.0.0/16"}]
-        ],
-        "routes": [{"dst": "0.0.0.0/0"}]
-    }
-}
-EOF
-```
-
-```bash
-cat > 99-loopback.conf <<EOF
-{
-    "cniVersion": "0.3.1",
-    "type": "loopback"
-}
-EOF
-```
-Move the config files to the cni config directory:
-
-```bash
-sudo mv 10-bridge.conf 99-loopback.conf /etc/cni/net.d/
-```
 ## Install Kubernetes binaries
 
 Download 1.10 Kubernetes binaries:
 
 ```bash
 wget -q --show-progress --https-only --timestamping \
-  https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubectl \
-  https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kube-proxy \
-  https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubelet
+  https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kubectl \
+  https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kube-proxy \
+  https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kubelet
 ```
 
 Make the bin executable and move them to **/usr/local/bin**:
@@ -177,21 +109,20 @@ cat > kubelet.service <<EOF
 [Unit]
 Description=Kubernetes Kubelet
 Documentation=https://github.com/kubernetes/kubernetes
-After=crio.service
-Requires=crio.service
+After=containerd.service
+Requires=containerd.service
 
 [Service]
 ExecStart=/usr/local/bin/kubelet \\
   --allow-privileged=true \\
   --anonymous-auth=false \\
   --authorization-mode=Webhook \\
-  --cgroup-driver=systemd \\
   --client-ca-file=/var/lib/kubernetes/ca.pem \\
   --cloud-provider= \\
   --cluster-dns=10.10.0.10 \\
   --cluster-domain=cluster.local \\
   --container-runtime=remote \\
-  --container-runtime-endpoint=unix:///var/run/crio/crio.sock \\
+  --container-runtime-endpoint=unix:///var/run/containerd/contqinerd.sock \\
   --image-pull-progress-deadline=2m \\
   --kubeconfig=/var/lib/kubelet/kubeconfig \\
   --network-plugin=cni \\
@@ -251,8 +182,8 @@ sudo systemctl daemon-reload
 Enable and start the services:
 
 ```bash
-sudo systemctl enable crio kubelet kube-proxy
-sudo systemctl start crio kubelet kube-proxy
+sudo systemctl enable containerd kubelet kube-proxy
+sudo systemctl start containerd kubelet kube-proxy
 ```
 
 ## Checks
@@ -264,9 +195,9 @@ kubectl get nodes
 ```bash
 kubectl get nodes
 NAME      STATUS    ROLES     AGE       VERSION
-k8swrk1   Ready     <none>    1m        v1.10.0
-k8swrk2   Ready     <none>    7h        v1.10.0
-k8swrk3   Ready     <none>    7h        v1.10.0
+k8swrk1   Ready     <none>    1m        v1.10.1
+k8swrk2   Ready     <none>    7h        v1.10.1
+k8swrk3   Ready     <none>    7h        v1.10.1
 ```
 
 #### [Next: Generating kubectl config >][8]
@@ -284,7 +215,7 @@ k8swrk3   Ready     <none>    7h        v1.10.0
  [9]: /k8s-thw/part9
 [30]: https://launchpad.net/~projectatomic/+archive/ubuntu/ppa
 [31]: https://github.com/containernetworking/plugins/releases
-[20]: http://cri-o.io/
+[20]: http://containerd.io/
 [21]: https://github.com/containernetworking/plugins
 [22]: https://kubernetes.io/docs/reference/generated/kubelet/
 [23]: https://kubernetes.io/docs/reference/generated/kube-proxy/

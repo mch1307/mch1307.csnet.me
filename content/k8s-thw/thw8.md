@@ -18,7 +18,7 @@ url: /k8s-thw/part8/
 
 In this section we will generate a kubeconfig file for the **kubectl** k8s utility based on the **admin** user credentials.
 
-> Run the commands from the same directory used to generate the admin client certificates in [Part 2][2].
+{{% alert theme="info" %}}Run the commands from the same directory used to generate the admin client certificates in <a href=" /k8s-thw/part2">Part 2</a>.{{% /alert %}}
 
 ## kubeconfig file
 
@@ -72,13 +72,13 @@ kubectl config use-context kubernetes
 
 Check the health of the remote Kubernetes cluster:
 
-```
+```bash
 kubectl get componentstatuses
 ```
 
 Result:
 
-```
+```bash
 NAME                 STATUS    MESSAGE              ERROR
 controller-manager   Healthy   ok
 scheduler            Healthy   ok
@@ -95,16 +95,24 @@ kubectl get nodes
 
 Result:
 
-```
+```bash
 NAME      STATUS    ROLES     AGE       VERSION
-k8swrk1   Ready     <none>    1d        v1.10.0
-k8swrk2   Ready     <none>    1d        v1.10.0
-k8swrk3   Ready     <none>    1d        v1.10.0
+k8swrk1   Ready     <none>    1d        v1.10.1
+k8swrk2   Ready     <none>    1d        v1.10.1
+k8swrk3   Ready     <none>    1d        v1.10.1
 ```
 
-#### [Deploying Cluster Add-ons >][9]
+## Distribute
 
-#### [< Bootstrapping k8s Worker Nodes][7]
+Now that we have our working kubeconfig file, we can copy it to the home folder in the .kube sub-directory.
+
+If you already have some Kubernetes cluster configured, you will need to either "merge" your current config file with the new one or specify the config file used when invoking **kubectl**
+
+More information on organizing access to Kubernetes clusters is available [here][20]
+
+#### [Next: Deploying Cluster Add-ons >][9]
+
+#### [< Previous: Bootstrapping k8s Worker Nodes][7]
 
  [1]: /k8s-thw/part1
  [2]: /k8s-thw/part2
@@ -115,3 +123,4 @@ k8swrk3   Ready     <none>    1d        v1.10.0
  [7]: /k8s-thw/part7
  [8]: /k8s-thw/part8
  [9]: /k8s-thw/part9
+[20]: https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/

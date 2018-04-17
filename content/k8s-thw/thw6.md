@@ -93,10 +93,10 @@ The Kubernetes control plane is made up of three components:
 
 ```bash
 wget -q --show-progress --https-only --timestamping \
-  "https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kube-apiserver" \
-  "https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kube-controller-manager" \
-  "https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kube-scheduler" \
-  "https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubectl"
+  "https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kube-apiserver" \
+  "https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kube-controller-manager" \
+  "https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kube-scheduler" \
+  "https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kubectl"
 ```
 
 ```
@@ -340,10 +340,10 @@ You should get a similar output:
 {
   "major": "1",
   "minor": "10",
-  "gitVersion": "v1.10.0",
-  "gitCommit": "fc32d2f3698e36b93322a3465f63a14e9f0eaead",
+  "gitVersion": "v1.10.1",
+  "gitCommit": "d4ab47518836c750f9949b9e0d387f20fb92260b",
   "gitTreeState": "clean",
-  "buildDate": "2018-03-26T16:44:10Z",
+  "buildDate": "2018-04-12T14:14:26Z",
   "goVersion": "go1.9.3",
   "compiler": "gc",
   "platform": "linux/amd64"

@@ -29,7 +29,7 @@ We will use [kubectl][21] to generate config files for [kubelet][22] and [kube-p
 First we will install kubectl utility.
 
 ```
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd64/kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kubectl
 ```
 Make the kubectl binary executable
 

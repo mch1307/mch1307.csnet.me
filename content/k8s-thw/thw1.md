@@ -44,10 +44,11 @@ The following table contains the list of hosts to be provisioned.
 
 We will be using the following versions:
 
-* Kubernetes v1.10.0
+* Kubernetes v1.10.1
 * etcd v3.2.18
-* docker
-* weave
+* containerd v1.1.0-rc.2
+* core-dns v1.1.1
+* weave v2.3.0
 
 ## Network information
 

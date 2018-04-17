@@ -15,7 +15,43 @@ weight: 10
 draft: true
 url: /k8s-thw/part9/
 ---
+## Weave
 
+We will use [weave][20] version 2.3.0 as our network overlay. 
+
+It is really easy to install as a [Kubernetes Addon][21] and does not require additional configuration.
+
+Here is the basic command from the Weave documentation:
+
+```bash
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+```
+
+We need to customize the default configuration to reflect our custom POD_CIDR network (10.16.0.0/16). We can customize the yaml manifest by passing the **IPALLOC_RANGE** option to the HTTP get:
+
+```bash
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=10.16.0.0/16"
+```
+
+If you prefer to check the yaml manifest before applying to Kubernetes, just wget the above url.
+
+
+## Checks
+
+Verify pods are up and running:
+
+```bash
+kubectl get pod --namespace=kube-system -l name=weave-net
+```
+
+Output:
+
+```bash
+NAME              READY     STATUS    RESTARTS   AGE
+weave-net-fwvsr   2/2       Running   1          4h
+weave-net-v9z9n   2/2       Running   1          4h
+weave-net-zfghq   2/2       Running   1          4h
+```
 
 #### [Next: Deploying Cluster Add-ons >][10]
 
@@ -30,3 +66,5 @@ url: /k8s-thw/part9/
  [7]: /k8s-thw/part7
  [8]: /k8s-thw/part8
  [10]: /k8s-thw/part10
+ [20]: https://www.weave.works/docs/net/latest/kubernetes/kube-addon/
+ [21]: https://kubernetes.io/docs/concepts/cluster-administration/addons/
