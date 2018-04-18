@@ -96,10 +96,10 @@ kubectl get nodes
 Result:
 
 ```bash
-NAME      STATUS    ROLES     AGE       VERSION
-k8swrk1   Ready     <none>    1d        v1.10.1
-k8swrk2   Ready     <none>    1d        v1.10.1
-k8swrk3   Ready     <none>    1d        v1.10.1
+NAME      STATUS       ROLES     AGE       VERSION
+k8swrk1   NotReady     <none>    1h        v1.10.1
+k8swrk2   NotReady     <none>    2h        v1.10.1
+k8swrk3   NotReady     <none>    2h        v1.10.1
 ```
 
 ## Distribute

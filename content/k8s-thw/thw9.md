@@ -63,6 +63,8 @@ weave-net-v9z9n   2/2       Running   1          4h
 weave-net-zfghq   2/2       Running   1          4h
 ```
 
+All nodes should now be in state `Ready`
+
 #### [Next: Deploying Cluster Add-ons >][10]
 
 #### [< Previous: Generating kubectl config][8]
