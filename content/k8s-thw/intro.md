@@ -14,7 +14,7 @@ link: "#"
 weight: 1
 draft: false
 url: /k8s-thw/intro/
-tags: ["kubernetes","k8s","cri-o"]
+tags: ["kubernetes","k8s","containerd","weave net","cni"]
 ---
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
@@ -22,6 +22,8 @@ While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][20
 I wanted to do the setup on-premises (using VMs), meaning no cloud provider. So I had to &#8220;adapt&#8221; the tutorial accordingly. As I have spent some time getting everything up and running, I have decided to share my experience through a series of posts.
 
 This is just an adaptation of THE guide and a sharing of my experience, which I hope will be helpful to others.
+
+At the end of this guide, you will have a HA [Kubernetes][304] 1.10.1 up and running with [containerd][301] 1.1.0-rc2, [Weave Net][302] 2.3.0 and [CoreDNS][303] 1.1.1.
 
 The tutorial is organized in the following steps:
 
@@ -51,3 +53,7 @@ The tutorial is organized in the following steps:
  [100]: https://github.com/kubernetes/minikube
  [200]: https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/
  [300]: https://github.com/kelseyhightower/kubernetes-the-hard-way
+ [301]: https://containerd.io/
+ [302]: https://www.weave.works/docs/net/latest/kubernetes/kube-addon/
+ [303]: https://coredns.io/
+ [304]: https://kubernetes.io/
