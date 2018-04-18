@@ -40,7 +40,7 @@ The following table contains the list of hosts to be provisioned.
 
 {{% alert theme="info" %}}The details of provisionning the VMs is out of scope as they depend on the infrastructure. In my case, I am using Vmware ESX and will manually provison the hosts from a template.{{% /alert %}}
 
-## Versions
+## Components and Versions
 
 We will be using the following versions:
 

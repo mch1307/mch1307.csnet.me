@@ -4,7 +4,7 @@ linktitle: "On-Prem k8s | Part 7"
 description: "Bootstrapping k8s Worker Nodes"
 type: "itemized"
 author: "mch1307"
-date: "2018-04-11"
+date: "2018-04-15"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -17,23 +17,126 @@ url: /k8s-thw/part7/
 ---
 In this section, we will setup the worker nodes. The following components will be installed on each node:
 
-* [**containerd**][20]
 * [**cni plugins**][21]
+* [**containerd**][20]
 * [**kubelet**][22]
 * [**kube-proxy**][23]
 
 
 {{% alert theme="info" %}}All steps in this section need to be run on each worker node{{% /alert %}}
 
-{{% alert theme="info" %}}OS dependencies: _socat_ and _conntrack_ should be installed on the host{{% /alert %}}
+## Host preparation
+
+A few points need to be addressed at host level in order to make everything work smoothly:
+
+* socat and conntrack should be installed
+    
+    ```bash
+    sudo apt install socat conntrack
+    ```
+* ipv4 packet forwarding should be enabled
+
+      modify /etc/sysctl.conf:
+    
+      ```bash
+      net.ipv4.ip_forward=1
+      ```
+
+      ```bash
+      sysctl -p /etc/sysctl.conf
+      ```
+
+* Kubelet requires host to have no swap
+
+    ```
+    sudo swapoff -a
+    ```
+    Then comment the swap mount in the /etc/fstab file
+
+    > In case swap is required on the host, Kubelet can be started with the ```--fail-swap-on=false``` flag
+
+## CNI Plugins
+
+### Install
+
+The cni plugins can be downloaded from the [CNI Plugins release page][31]. We will install the latest version to date: v0.7.1
+
+
+Create the default directories
+
+```bash
+sudo mkdir -p /opt/cni/bin \
+  /etc/cni/net.d
+```
+
+```bash
+wget -q --show-progress --https-only --timestamping \
+  https://github.com/containernetworking/plugins/releases/download/v0.7.1/cni-plugins-amd64-v0.7.1.tgz
+```
+
+
+```bash
+sudo tar xvf cni-plugins-amd64-v0.7.1.tgz -C /opt/cni/bin
+```
+
+We do not need to configure cni as we will setup Weave and it will do the necessary setup automagically.
+
 
 ## Container runtime
 
-### containerd install
+Download and install containerd v1.1.0-rc2.
 
+```bash
+wget -q --show-progress --https-only --timestamping \
+  https://github.com/containerd/containerd/releases/download/v1.1.0-rc.2/containerd-1.1.0-rc.2.linux-amd64.tar.gz
+```
 
+```bash
+sudo tar xvf containerd-1.1.0-rc.2.linux-amd64.tar.gz -C /usr/local/
+```
 
-We will also install the [_cri-tools_][24]
+containerd requires [**runc**][26]
+
+```bash
+wget -q --show-progress --https-only --timestamping \
+  https://github.com/opencontainers/runc/releases/download/v1.0.0-rc5/runc.amd64
+```
+
+```bash
+mv runc.amd64 runc
+chmod +x runc
+sudo mv runc /usr/local/bin/
+```
+
+Create containerd systemd unit file
+
+```bash
+cat > containerd.service <<EOF
+[Unit]
+Description=containerd container runtime
+Documentation=https://containerd.io
+After=network.target
+
+[Service]
+ExecStartPre=/sbin/modprobe overlay
+ExecStart=/usr/local/bin/containerd
+Restart=always
+RestartSec=5
+Delegate=yes
+KillMode=process
+OOMScoreAdjust=-999
+LimitNOFILE=1048576
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNPROC=infinity
+LimitCORE=infinity
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+We will also install the [_crictl tool_][24], a command line tool for interacting with Container Runtime Interface.
 
 ```bash
 wget -q --show-progress --https-only --timestamping \
@@ -43,29 +146,27 @@ wget -q --show-progress --https-only --timestamping \
 Extract and install the binary:
 
 ```bash
-
+tar xvf crictl-v1.0.0-beta.0-linux-amd64.tar.gz
+chmod +x crictl
+sudo mv crictl /usr/local/bin
 ```
 
-
-## CNI Plugins
-
-### Install
-
-The cni plugins can be downloaded from the [CNI Plugins release page][31]. It is also available as an Ubuntu package from the ppa repo we just added in previous step. We will install this way:
+Configure ```crictl``` to connect to the ```containerd``` runtime by creating a config file:
 
 ```bash
-sudo apt install containernetworking-plugins
+cat > crictl.yaml <<EOF
+runtime-endpoint: unix:///var/run/containerd/containerd.sock
+timeout: 10
+EOF
 ```
 
-It will install the binaries in /opt/cni/bin.
-
-### Configure
-
-We do not need to configure cni as we will setup weave and it will do the necessary setup automagically.
+```bash
+sudo mv crictl.yaml /etc/crictl.yaml
+```
 
 ## Install Kubernetes binaries
 
-Download 1.10 Kubernetes binaries:
+Download 1.10.1 Kubernetes binaries:
 
 ```bash
 wget -q --show-progress --https-only --timestamping \
@@ -74,18 +175,14 @@ wget -q --show-progress --https-only --timestamping \
   https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kubelet
 ```
 
-Make the bin executable and move them to **/usr/local/bin**:
+Make the bin executable and move them to ```/usr/local/bin```:
 
 ```bash
 chmod +x kubectl kube-proxy kubelet
 sudo mv kubectl kube-proxy kubelet /usr/local/bin/
 ```
 
-## Kubelet
-
-{{% alert theme="info" %}}Kubelet requires the host to have no swap. Alternatively, Kubelet can be started with the **--fail-swap-on=false** flag{{% /alert %}}
-
-First we will create additional directories for Kubernetes components:
+Create additional directories for Kubernetes components:
 
 ```bash
 sudo mkdir -p /var/lib/kubelet \
@@ -93,6 +190,8 @@ sudo mkdir -p /var/lib/kubelet \
   /var/lib/kubernetes \
   /var/run/kubernetes
 ```
+
+## Kubelet
 
 Copy the required certificate and kubeconfig files files to new directory:
 
@@ -102,7 +201,7 @@ sudo mv ca.pem /var/lib/kubernetes/
 sudo mv ${HOSTNAME}.kubeconfig /var/lib/kubelet/kubeconfig
 ``` 
 
-Create the **kubelet.service** systemd unit file:
+Create the ```kubelet.service``` systemd unit file:
 
 ```bash
 cat > kubelet.service <<EOF
@@ -122,7 +221,7 @@ ExecStart=/usr/local/bin/kubelet \\
   --cluster-dns=10.10.0.10 \\
   --cluster-domain=cluster.local \\
   --container-runtime=remote \\
-  --container-runtime-endpoint=unix:///var/run/containerd/contqinerd.sock \\
+  --container-runtime-endpoint=unix:///var/run/containerd/containerd.sock \\
   --image-pull-progress-deadline=2m \\
   --kubeconfig=/var/lib/kubelet/kubeconfig \\
   --network-plugin=cni \\
@@ -148,7 +247,7 @@ Copy the kube-proxy config file:
 sudo mv kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 ```
 
-Generate the **kube-proxy** systemd unit file:
+Generate the ```kube-proxy``` systemd unit file:
 
 ```bash
 cat > kube-proxy.service <<EOF
@@ -175,7 +274,7 @@ EOF
 Move the systemd unit files:
 
 ```bash
-sudo mv kubelet.service kube-proxy.service /etc/systemd/system/
+sudo mv containerd.service kubelet.service kube-proxy.service /etc/systemd/system/
 sudo systemctl daemon-reload
 ```
 
@@ -194,11 +293,13 @@ kubectl get nodes
 
 ```bash
 kubectl get nodes
-NAME      STATUS    ROLES     AGE       VERSION
-k8swrk1   Ready     <none>    1m        v1.10.1
-k8swrk2   Ready     <none>    7h        v1.10.1
-k8swrk3   Ready     <none>    7h        v1.10.1
+NAME      STATUS       ROLES     AGE       VERSION
+k8swrk1   NotReady     <none>    1h        v1.10.1
+k8swrk2   NotReady     <none>    2h        v1.10.1
+k8swrk3   NotReady     <none>    2h        v1.10.1
 ```
+
+{{% alert theme="info" %}}Note that nodes status is "NotReady". This is normal as we did not configure networking yet.{{% /alert %}}
 
 #### [Next: Generating kubectl config >][8]
 
@@ -221,3 +322,4 @@ k8swrk3   Ready     <none>    7h        v1.10.1
 [23]: https://kubernetes.io/docs/reference/generated/kube-proxy/
 [24]: https://github.com/kubernetes-incubator/cri-tools
 [25]: https://github.com/kubernetes-incubator/cri-o#configuration
+[26]: https://github.com/opencontainers/runc

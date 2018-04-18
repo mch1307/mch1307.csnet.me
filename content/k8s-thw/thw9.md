@@ -32,8 +32,18 @@ We need to customize the default configuration to reflect our custom POD_CIDR ne
 ```bash
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=10.16.0.0/16"
 ```
+Output:
 
-If you prefer to check the yaml manifest before applying to Kubernetes, just wget the above url.
+```bash
+serviceaccount "weave-net" created
+clusterrole.rbac.authorization.k8s.io "weave-net" created
+clusterrolebinding.rbac.authorization.k8s.io "weave-net" created
+role.rbac.authorization.k8s.io "weave-net" created
+rolebinding.rbac.authorization.k8s.io "weave-net" created
+daemonset.extensions "weave-net" created
+```
+
+If you prefer checking the yaml manifest before applying to Kubernetes, just **wget** the above url.
 
 
 ## Checks
@@ -55,7 +65,7 @@ weave-net-zfghq   2/2       Running   1          4h
 
 #### [Next: Deploying Cluster Add-ons >][10]
 
-#### [< Bootstrapping k8s Worker Nodes][8]
+#### [< Previous: Generating kubectl config][8]
 
  [1]: /k8s-thw/part1
  [2]: /k8s-thw/part2

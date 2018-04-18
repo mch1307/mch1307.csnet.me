@@ -99,11 +99,11 @@ wget -q --show-progress --https-only --timestamping \
   "https://storage.googleapis.com/kubernetes-release/release/v1.10.1/bin/linux/amd64/kubectl"
 ```
 
-```
+```bash
 chmod +x kube-apiserver kube-controller-manager kube-scheduler kubectl
 ```
 
-```
+```bash
 sudo mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local/bin/
 ```
 
@@ -111,11 +111,11 @@ sudo mv kube-apiserver kube-controller-manager kube-scheduler kubectl /usr/local
 
 Create a kubernetes directory and copy the TLS files.
 
-```
+```bash
 sudo mkdir -p /var/lib/kubernetes/
 ```
 
-```
+```bash
 sudo mv ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem encryption-config.yaml /var/lib/kubernetes/
 ```
 
@@ -278,9 +278,9 @@ We therefore need to create a [ClusterRole][21] and bind it to the kubernetes us
 
 > You can run the below commands on any of the controller nodes
 
-Create the **system:kube-apiserver-to-kubelet** ClusterRole with permissions to access the Kubelet API and perform most common tasks associated with managing pods:
+Create the ```system:kube-apiserver-to-kubelet``` ClusterRole with permissions to access the Kubelet API and perform most common tasks associated with managing pods:
 
-```
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
@@ -308,7 +308,7 @@ The Kubernetes API Server authenticates to the Kubelet as the kubernetes user us
 
 Bind the **system:kube-apiserver-to-kubelet** ClusterRole to the kubernetes user:
 
-```
+```bash
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
@@ -330,13 +330,13 @@ EOF
 
 Verify we can access the Kubernetes API Server through the HAProxy load balancer:
 
-```
+```bash
 curl -k https://10.32.2.97:6443/version
 ```
 
 You should get a similar output:
 
-```
+```bash
 {
   "major": "1",
   "minor": "10",
