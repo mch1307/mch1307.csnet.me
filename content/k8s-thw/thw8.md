@@ -110,7 +110,7 @@ If you already have some Kubernetes cluster configured, you will need to either 
 
 More information on organizing access to Kubernetes clusters is available [here][20]
 
-#### [Next: Deploying Cluster Add-ons >][9]
+#### [Next: Configuring Networking >][9]
 
 #### [< Previous: Bootstrapping k8s Worker Nodes][7]
 
