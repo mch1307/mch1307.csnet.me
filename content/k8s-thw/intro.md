@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 1
-draft: true
+draft: false
 url: /k8s-thw/intro/
 tags: ["kubernetes","k8s","cri-o"]
 ---
