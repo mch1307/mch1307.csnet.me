@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 6
-draft: true
+draft: false
 url: /k8s-thw/part5/
 ---
 

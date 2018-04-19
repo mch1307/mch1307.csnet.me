@@ -4,7 +4,7 @@ linktitle: "On-Prem k8s | Part 10"
 description: "Deploying Cluster Add-ons"
 type: "itemized"
 author: "mch1307"
-date: "2018-04-11"
+date: "2018-04-18"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 11
-draft: true
+draft: false
 url: /k8s-thw/part10/
 ---
 

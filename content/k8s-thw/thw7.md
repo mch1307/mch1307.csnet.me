@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 8
-draft: true
+draft: false
 url: /k8s-thw/part7/
 ---
 In this section, we will setup the worker nodes. The following components will be installed on each node:
