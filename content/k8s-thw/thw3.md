@@ -48,7 +48,7 @@ sudo mv kubectl /usr/local/bin/kubectl
 
 ### kubelet
 
->Kubelet needs to be properly authorized by the [Kubernetes Node Authorizer][24]. We will include each worker node's individual client certificate in the kubeconfig file
+{{% alert theme="info" %}}Kubelet needs to be properly authorized by the [Kubernetes Node Authorizer][24]. We will include each worker node's individual client certificate in the kubeconfig file.{{% /alert %}}
 
 Generate a kubelet kubeconfig file for each of our worker nodes:
 

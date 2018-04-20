@@ -115,7 +115,8 @@ sudo systemctl enable etcd
 sudo systemctl start etcd
 ```
 
-> Remember to run the above commands on each controller node: **k8sctl1**, **k8sctl2**, and **k8sctl3**.
+
+{{% alert theme="info" %}}Remember to run the above commands on each controller node: **k8sctl1**, **k8sctl2**, and **k8sctl3**.{{% /alert %}}
 
 ## Check etcd cluster is up and running
 
