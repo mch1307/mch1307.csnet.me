@@ -4,7 +4,7 @@ linktitle: "On-Prem k8s | Part 8"
 description: "Generating kubectl config"
 type: "itemized"
 author: "mch1307"
-date: "2018-04-11"
+date: "2018-04-16"
 featured: ""
 featuredpath: ""
 featuredalt: ""
@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 9
-draft: true
+draft: false
 url: /k8s-thw/part8/
 ---
 

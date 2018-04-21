@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 7
-draft: true
+draft: false
 url: /k8s-thw/part6/
 ---
 
@@ -276,7 +276,8 @@ When setting up the worker nodes in the next part, we will secure Kubelet by set
 
 We therefore need to create a [ClusterRole][21] and bind it to the kubernetes user so that Kubernetes API Server can be properly authorized by the Kubelet.
 
-> You can run the below commands on any of the controller nodes
+
+{{% alert theme="info" %}}You can run the below commands on any of the controller nodes.{{% /alert %}}
 
 Create the ```system:kube-apiserver-to-kubelet``` ClusterRole with permissions to access the Kubelet API and perform most common tasks associated with managing pods:
 
@@ -304,9 +305,9 @@ rules:
 EOF
 ```
 
-The Kubernetes API Server authenticates to the Kubelet as the kubernetes user using the client certificate as defined by the **--kubelet-client-certificate** flag specified when starting the API Server.
+The Kubernetes API Server authenticates to the Kubelet as the kubernetes user using the client certificate as defined by the `--kubelet-client-certificate` flag specified when starting the API Server.
 
-Bind the **system:kube-apiserver-to-kubelet** ClusterRole to the kubernetes user:
+Bind the `system:kube-apiserver-to-kubelet` ClusterRole to the kubernetes user:
 
 ```bash
 cat <<EOF | kubectl apply -f -

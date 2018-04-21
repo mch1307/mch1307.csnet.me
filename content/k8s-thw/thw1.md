@@ -12,7 +12,7 @@ categories: [""]
 #format: "Android"
 link: "#"
 weight: 2
-draft: true
+draft: false
 url: /k8s-thw/part1/
 ---
 
@@ -47,8 +47,8 @@ We will be using the following versions:
 * Kubernetes v1.10.1
 * etcd v3.2.18
 * containerd v1.1.0-rc.2
-* core-dns v1.1.1
-* weave v2.3.0
+* CoreDNS v1.1.1
+* Weave Net v2.3.0
 
 ## Network information
 
