@@ -46,6 +46,7 @@ We will be using the following versions:
 
 * Kubernetes v1.10.1
 * etcd v3.2.18
+* CNI network plugins v0.7.1
 * containerd v1.1.0-rc.2
 * CoreDNS v1.1.1
 * Weave Net v2.3.0
