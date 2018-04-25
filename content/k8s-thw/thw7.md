@@ -84,15 +84,15 @@ We do not need to configure cni as we will setup Weave and it will do the necess
 
 ## Container runtime
 
-Download and install containerd v1.1.0-rc2.
+Download and install containerd v1.1.0.
 
 ```bash
 wget -q --show-progress --https-only --timestamping \
-  https://github.com/containerd/containerd/releases/download/v1.1.0-rc.2/containerd-1.1.0-rc.2.linux-amd64.tar.gz
+  https://github.com/containerd/containerd/releases/download/v1.1.0/containerd-1.1.0.linux-amd64.tar.gz
 ```
 
 ```bash
-sudo tar xvf containerd-1.1.0-rc.2.linux-amd64.tar.gz -C /usr/local/
+sudo tar xvf containerd-1.1.0.linux-amd64.tar.gz -C /usr/local/
 ```
 
 containerd requires [**runc**][26]
