@@ -12,7 +12,7 @@ categories: [""]
 draft: false
 url: /2018/04/on-prem-k8s-thw/
 archives: "2018"
-tags: ["kubernetes","k8s","containerd","weave net","cni"]
+tags: ["Kubernetes","k8s","containerd","weave net","cni", "CoreDNS"]
 ---
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] or Rancher's [rke][201] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
