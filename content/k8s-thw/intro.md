@@ -23,7 +23,7 @@ I wanted to do the setup on-premises (using VMs), meaning no cloud provider. So 
 
 This is just an adaptation of THE guide and a sharing of my experience, which I hope will be helpful to others.
 
-At the end of this guide, you will have a HA [Kubernetes][304] 1.10.1 up and running with [containerd][301] 1.1.0-rc2, [Weave Net][302] 2.3.0 and [CoreDNS][303] 1.1.1.
+At the end of this guide, you will have a HA [Kubernetes][304] 1.10.1 up and running with [containerd][301] 1.1.0, [Weave Net][302] 2.3.0 and [CoreDNS][303] 1.1.1.
 
 The tutorial is organized in the following steps:
 
