@@ -37,7 +37,9 @@ deployment.extensions "coredns" created
 service "kube-dns" created
 ```
 
-Checks:
+### Checks
+
+Verify pods are up and running:
 
 ```bash
 kubectl get pod --all-namespaces -l k8s-app=coredns -o wide
@@ -47,6 +49,34 @@ kubectl get pod --all-namespaces -l k8s-app=coredns -o wide
 NAMESPACE     NAME                       READY     STATUS    RESTARTS   AGE       IP             NODE
 kube-system   coredns-85646c4d6b-2bhzf   1/1       Running   0          9m        10.16.128.14   k8swrk1
 kube-system   coredns-85646c4d6b-2cdgq   1/1       Running   0          3m        10.16.0.13     k8swrk2
+```
+
+Verify DNS resolution:
+
+Launch a simple busybox deployment: 
+
+```bash
+kubectl run busybox --image=busybox --command -- sleep 3600
+```
+
+Get the pod's exact name:
+
+```bash
+POD_NAME=$(kubectl get pods -l run=busybox -o jsonpath="{.items[0].metadata.name}")
+```
+
+Check DNS resolution from within the busybox pod:
+
+```bash
+kubectl exec -ti $POD_NAME -- nslookup kubernetes
+```
+
+```bash
+Server:    10.10.0.10
+Address 1: 10.10.0.10 kube-dns.kube-system.svc.cluster.local
+
+Name:      kubernetes
+Address 1: 10.10.0.1 kubernetes.default.svc.cluster.local
 ```
 
 #### [< Configuring Networking][9]
