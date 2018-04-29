@@ -1,7 +1,7 @@
 ---
 title: "On-Premises Kubernetes… The Hard Way"
 linktitle: "Kubernetes"
-description: "Step by step k8s on-premises deployment"
+description: "Step by step Kubernetes on-premises deployment"
 type: "post"
 author: "mch1307"
 date: "2018-04-26"
@@ -13,6 +13,7 @@ draft: false
 url: /2018/04/on-prem-k8s-thw/
 archives: "2018"
 tags: ["Kubernetes","k8s","containerd","weave net","cni", "CoreDNS"]
+categories: ["containers", "kubernetes"]
 ---
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] or Rancher's [rke][201] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
