@@ -153,6 +153,7 @@
     </section>
   {{ end }}
 
+
   <!-- Footer -->
   <section id="footer">
     {{ if .Site.Params.socialAppearAtBottom }}
@@ -174,7 +175,10 @@
           {{ .Site.Title }}
         {{ end }}
       {{end}}.
-      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+      <p class="center">
+        <a href="http://gohugo.io"><img src="/img/powered-by-hugo.png" height="58" width="120"/></a>
+        <a href="https://www.netlify.com"><img src="https://www.netlify.com/img/global/badges/netlify-light.svg"/></a>
+      </p>
     </p>
   </section>
 </section>

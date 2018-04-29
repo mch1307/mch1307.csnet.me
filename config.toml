@@ -22,7 +22,8 @@ canonifyURLs = true
   archive = "archives"
 
 [params]
-  # Sets the meta tag description
+  author = "Michael Champagne"
+  # Sets the meta tag
   description          = "#containers, #oss, #go"
   # Sets the navbarTitle that appears in the top left of the navigation bar
   navbarTitle          = "mch1307"
@@ -39,7 +40,7 @@ canonifyURLs = true
   socialAppearAtTop    = true
   socialAppearAtBottom = true
   # Sets Categories to sort by number of posts instead of alphabetical
-  categoriesByCount    = true
+  categoriesByCount    = false
   # set to show or to hide categories in the sidebar
   showSidebarCategories = false
   showSidebarArchives = true
