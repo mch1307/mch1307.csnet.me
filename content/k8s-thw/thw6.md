@@ -45,6 +45,7 @@ Edit the **/etc/haproxy/haproxy.cfg** file by adding the following lines at the 
 ```
 backend k8s-api
   mode tcp
+  timeout server 1h
   option tcplog
   option tcp-check
   balance roundrobin
@@ -57,8 +58,11 @@ frontend k8s-api
   bind 0.0.0.0:6443
   mode tcp
   option tcplog
+  timeout client 1h
   default_backend k8s-api
 ```
+
+{{% alert theme="info" %}}The default HAProxy timeouts are set to 50 seconds. We are setting them to one hour in order to allow long running kubectl commands not to be disconnected.{{% /alert %}}
 
 ## Start HAProxy
 
