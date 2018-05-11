@@ -1,7 +1,7 @@
 ---
 title: "On-Premises Kubernetes… The Hard Way"
 linktitle: "Kubernetes"
-description: "Step by step Kubernetes on-premises deployment"
+description: "Step by step Kubernetes on-premises setup"
 type: "post"
 author: "mch1307"
 date: "2018-04-26"
@@ -36,6 +36,7 @@ The [tutorial][11] is organized in the following steps:
   8. [Generating kubectl config file][8]
   9. [Configuring Networking][9]
   10. [Deploying Cluster Add-ons][10]
+  11. [Kubernetes Cluster Conformance][11]
 
 #### [On-Premises Kubernetes Step by Step][11]
 
@@ -49,7 +50,7 @@ The [tutorial][11] is organized in the following steps:
  [8]: /k8s-thw/part8
  [9]: /k8s-thw/part9
  [10]: /k8s-thw/part10
- [11]: /k8s-thw/
+ [11]: /k8s-thw/part11
  [100]: https://github.com/kubernetes/minikube
  [200]: https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm/
  [201]: https://github.com/rancher/rke

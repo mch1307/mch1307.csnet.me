@@ -79,6 +79,9 @@ Name:      kubernetes
 Address 1: 10.10.0.1 kubernetes.default.svc.cluster.local
 ```
 
+
+#### [Next: Kubernetes Cluster Conformance >][10]
+
 #### [< Configuring Networking][9]
 
  [1]: /k8s-thw/part1
@@ -90,6 +93,7 @@ Address 1: 10.10.0.1 kubernetes.default.svc.cluster.local
  [7]: /k8s-thw/part7
  [8]: /k8s-thw/part8
  [9]: /k8s-thw/part9
+ [10]: /k8s-thw/part11
  [20]: https://github.com/coredns/coredns
 [21]: https://www.cncf.io/
 [22]: https://github.com/mch1307/k8s-thw/blob/master/coredns.yaml
