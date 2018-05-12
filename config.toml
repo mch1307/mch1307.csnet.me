@@ -54,10 +54,10 @@ enableEmoji = true
   # loadFavicon          = false
   #faviconVersion       = "favicon.ico"
   # Sets Social Share links to appear on posts
-  socialShare          = false
+  socialShare          = true
   # Sets specific share to appear on posts (default behavior is to appear)
   socialShareTwitter   = true
-  socialShareGoogleplus = true
+  socialShareGoogleplus = false
   socialShareFacebook  = true
   socialShareReddit    = true
   socialShareLinkedin  = true
