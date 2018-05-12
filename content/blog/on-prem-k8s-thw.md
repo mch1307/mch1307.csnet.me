@@ -1,10 +1,11 @@
 ---
-title: "On-Premises Kubernetes… The Hard Way"
+title: "On-Premises Kubernetes 1.10… The Hard Way"
 linktitle: "Kubernetes"
-description: "Step by step Kubernetes on-premises setup"
+description: "Step by step Kubernetes 1.10 on-premises setup"
 type: "post"
 author: "mch1307"
 date: "2018-04-26"
+lastmod: "2018-05-12"
 featured: "k8s-thw.png"
 featuredpath: "date"
 featuredalt: ""
@@ -12,7 +13,7 @@ categories: [""]
 draft: false
 url: /2018/04/on-prem-k8s-thw/
 archives: "2018"
-tags: ["Kubernetes","k8s","containerd","weave net","cni", "CoreDNS"]
+tags: ["Kubernetes","k8s","containerd","weave net","cni", "CoreDNS", "Ubuntu"]
 categories: ["containers", "kubernetes"]
 ---
 
@@ -24,7 +25,7 @@ This is just an adaptation of the guide and a sharing of my experience, which I 
 
 At the end of this guide, you will have a HA [Kubernetes][304] 1.10.1 up and running with [containerd][301] 1.1.0, [Weave Net][302] 2.3.0 and [CoreDNS][303] 1.1.1.
 
-The [tutorial][11] is organized in the following steps:
+The tutorial is organized in the following steps:
 
   1. [Planning the Installation][1]
   2. [Provisioning TLS certificates][2]
