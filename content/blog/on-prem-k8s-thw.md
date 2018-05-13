@@ -19,7 +19,9 @@ categories: ["containers", "kubernetes"]
 
 While preparing the CKA exam, I have been using [minikube][100] and [kubeadm][200] or Rancher's [rke][201] to bootstrap kubernetes clusters. Those tools are very nice but I wanted to understand all the details of a full setup. The best for this is the excellent &#8220;[Kubernetes The Hard Way][300]&#8221; tutorial from Kelsey Hightower.
 
-I wanted to do the setup on-premises (using VMs), meaning no cloud provider. So I had to &#8220;adapt&#8221; the tutorial accordingly. As I have spent some time getting everything up and running, I have decided to share my experience through a series of posts.
+I wanted to do the setup on-premises, meaning no cloud provider. So I had to &#8220;adapt&#8221; the tutorial accordingly. As I have spent some time getting everything up and running, I have decided to share my experience through a series of posts.
+
+The tutorial is using VMs, but should be applicable any non cloud setup like bare metal or other.
 
 This is just an adaptation of the guide and a sharing of my experience, which I hope will be helpful to others.
 
