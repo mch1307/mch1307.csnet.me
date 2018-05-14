@@ -11,7 +11,9 @@ featuredpath: "date"
 featuredalt: ""
 categories: [""]
 draft: false
-url: /2018/04/on-prem-k8s-thw/
+url: "/2018/04/on-prem-k8s-thw/"
+aliases: 
+  - /k8s-thw/intro/
 archives: "2018"
 tags: ["Kubernetes","k8s","containerd","weave net","cni", "CoreDNS", "Ubuntu"]
 categories: ["containers", "kubernetes"]
