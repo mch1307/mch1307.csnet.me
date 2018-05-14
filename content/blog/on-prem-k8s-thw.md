@@ -1,5 +1,5 @@
 ---
-title: "On-Premises Kubernetes 1.10… The Hard Way"
+title: "On-Premises Kubernetes… The Hard Way"
 linktitle: "Kubernetes"
 description: "Step by step Kubernetes 1.10 on-premises setup"
 type: "post"
