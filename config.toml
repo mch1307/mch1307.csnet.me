@@ -1,6 +1,6 @@
 baseurl = "https://blog.csnet.me"
 languageCode = "en-us"
-title = "mch1307's blog"
+title = "Michael Champagne's blog"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 12
@@ -103,9 +103,9 @@ enableEmoji = true
   # These are optional params related to the sidebar. They are recommended, but not
   # required for proper functionality. HTML is supported within the params.
 [params.intro]
-  header    = "mch1307"
+  header    = "Michael Champagne"
 
-  paragraph = "#containers, #oss, #go"
+  paragraph = "#technology, #containers, #oss, #go"
 
   about     = "Personal experiments with #containers, #go and #oss"
 
@@ -197,7 +197,7 @@ enableEmoji = true
   # Social Networks
   facebook         = ""
   googleplus       = ""
-  reddit           = ""
+  reddit           = "mch1307"
   quora            = ""
   youtube          = ""
   vimeo            = ""
