@@ -7,7 +7,7 @@ author: "mch1307"
 date: "2019-02-02"
 lastmod: "2019-02-02"
 featured: "vault-go.png"
-featuredpath: "date"
+featuredpath: date
 featuredalt: ""
 draft: false
 url: "/2019/02/vaultlib/"
@@ -20,10 +20,10 @@ Moving applications to containers can require some considerable development effo
 
 As part of their configuration, most applications will require different credentials for accessing services they consume (database, APIs,.. ). HashiCorp's Vault is a great tool to manage such data.
 
-In some cases, an application can hardly be changed in order to be able to get its configuration from another source than the traditional server config file. You might then want to develop a utility that can prepare a configuration file before the application get started. Having to develop such utilities led me to write my first go library: [vaultlib][1]. 
+In some cases, an application can hardly be changed in order to be able to get its configuration from another source than the traditional server config file. You might then want to develop a utility that can prepare a configuration file before the application get started. Having to develop such utilities led me to write my first go library: 
 
 
-## vaultlib [![Build Status](https://travis-ci.org/mch1307/vaultlib.svg?branch=master)](https://travis-ci.org/mch1307/vaultlib) [![Coverage Status](https://coveralls.io/repos/github/mch1307/vaultlib/badge.svg?branch=master)](https://coveralls.io/github/mch1307/vaultlib?branch=master) [![GoDoc](https://godoc.org/github.com/mch1307/vaultlib?status.svg)](https://godoc.org/github.com/mch1307/vaultlib) [![Go Report Card](https://goreportcard.com/badge/github.com/mch1307/vaultlib)](https://goreportcard.com/report/github.com/mch1307/vaultlib)
+## [vaultlib][1] [![Build Status](https://travis-ci.org/mch1307/vaultlib.svg?branch=master)](https://travis-ci.org/mch1307/vaultlib) [![Coverage Status](https://coveralls.io/repos/github/mch1307/vaultlib/badge.svg?branch=master)](https://coveralls.io/github/mch1307/vaultlib?branch=master) [![GoDoc](https://godoc.org/github.com/mch1307/vaultlib?status.svg)](https://godoc.org/github.com/mch1307/vaultlib) [![Go Report Card](https://goreportcard.com/badge/github.com/mch1307/vaultlib)](https://goreportcard.com/report/github.com/mch1307/vaultlib)
 
 Is a simple, lightweight go library allowing to easily read secrets from Vault KV using it's HTTP APIs.
 
