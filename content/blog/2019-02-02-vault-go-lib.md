@@ -1,5 +1,5 @@
 ---
-title: "vaultlib: a Go client library for reading secrets from Vault"
+title: "vaultlib: a Go Vault client library for reading secrets"
 linktitle: "vaultlib"
 description: "A simple, lightweight Go library for getting secrets from Hashicorp Vault"
 type: "post"
